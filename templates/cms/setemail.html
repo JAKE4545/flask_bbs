@@ -1,0 +1,35 @@
+{% extends 'cms/cms_base.html' %}
+
+{% block title %}
+  <title>修改邮箱</title>
+{% endblock %}
+
+{% block page_title %}
+  <h1 class="page-header">修改邮箱</h1>
+{% endblock %}
+
+{% block content %}
+  <form action="" method="post">
+    <input type="hidden" name="csrf_token", value="{{ csrf_token() }}">
+    <div class="form-container">
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" class="form-control" id="emailaddr" name="email" placeholder="邮箱地址">
+          <span class="input-group-addon" id="get_captcha" style="cursor: pointer">获取验证码</span>
+        </div>
+        <span id="captchatip" style="color: red; display: none"></span>
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control" id="captcha" name="captcha" placeholder="验证码">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" id="submit">立即修改</button>
+      </div>
+      <span id="emailtip" style="color: red; display: none"></span>
+    </div>
+  </form>
+{% endblock %}
+
+{% block extension %}
+  <script src="{{ url_for("static", filename="cms/js/setemail.js") }}"></script>
+{% endblock %}

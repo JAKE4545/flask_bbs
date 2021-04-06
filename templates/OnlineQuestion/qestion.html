@@ -1,0 +1,15 @@
+{% extends 'cms/cms_base.html' %}
+
+{% block content %}
+<h3>{{qestion}}</h3>
+&nbsp;<li>{{optionA}}</li>
+&nbsp;<li>{{optionB}}</li>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<a href="{{last}}">上一题</a>&nbsp;&nbsp;&nbsp;<a href="{{answer}}">显示答案</a>&nbsp;&nbsp;&nbsp;<a href="{{next}}">下一题</a>
+{% endblock %}

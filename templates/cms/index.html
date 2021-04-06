@@ -1,0 +1,34 @@
+{% extends 'cms/cms_base.html' %}
+
+{% block title %}
+  <title>论坛系统-浏览帖子</title>
+{% endblock %}
+{#{% block page_title %}#}
+{#  <h1 class="page-header">首页</h1>#}
+{#{% endblock %}#}
+
+{% block content %}
+    {% set posts = post_msg %}
+    {% for post in posts %}
+    <div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="..." alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+{#    <h4 class="media-heading">{{ post.author_id }}</h4> #}
+      <ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge">{{ post.timestamp }}</span>
+    {{ post.author_id }}
+  </li>
+</ul>
+    {{ post.body}}
+
+  </div>
+</div>
+    {% endfor %}
+
+
+{% endblock %}

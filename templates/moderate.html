@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% from "bootstrap/pagination.html" import render_pagination %}
+
+{% block title %}简微博 - 评论管理{% endblock %}
+
+{% block page_content %}
+    <div class="page-header">
+        <h1>评论管理</h1>
+    </div>
+    {% set moderate=True %}
+    {% include "../../../flask_bbs/templates/_comments.html" %}
+    {% if pagination %}
+        <div class="pagination">
+            {{ render_pagination(pagination, '.moderate') }}
+        </div>
+    {% endif %}
+{% endblock %}

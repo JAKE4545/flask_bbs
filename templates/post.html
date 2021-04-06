@@ -1,0 +1,27 @@
+{% extends "cms/cms_base.html" %}
+{% block title %}发布帖子{% endblock %}
+
+{% block page_title %}
+    <h3 class="page-header">发布新帖</h3>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+  <form method="post">
+      <input type="hidden" name="csrf_token", value="{{ csrf_token() }}">
+  <div class="form-group">
+        <div class="form-group">
+            <textarea  name="text" class="form-control" style="height:200px;width:800px" rows="3"></textarea>
+        </div>
+      <button type="submit" value="发布" name="submit" style="height:30px;width:60px;background-color:gray;">发布</button>
+  </div>
+{#  {% set msg = get_flashed_messages() %}#}
+  {% if error %}
+        <p style="color: #ff0000">{{ error }}</p>
+  {% endif %}
+      {% if message %}
+        <p>{{ message }}</p>
+      {% endif %}
+  </form>
+    </div>
+{% endblock %}

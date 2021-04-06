@@ -1,0 +1,32 @@
+{% extends 'cms/cms_base.html' %}
+
+{% block title %}
+  <title>论坛系统-我的帖子</title>
+{% endblock %}
+{% block page_title %}
+  <h1 class="page-header">我的帖子</h1>
+{% endblock %}
+
+{% block content %}
+    {% set posts = post_msg %}
+    {% for post in posts %}
+    <div class="media">
+{#  <div class="media-left">#}
+{#      <img class="media-object" src="..\static\images\role.jpg" alt="头像">#}
+{#  </div>#}
+  <div class="media-body">
+{#    <h4 class="media-heading">{{ post.author_id }}</h4> #}
+      <ul class="list-group">
+  <li class="list-group-item">
+    <span class="badge">{{ post.timestamp }}</span>
+    {{ post.author_id }}
+  </li>
+</ul>
+    {{ post.body}}
+
+  </div>
+</div>
+    {% endfor %}
+
+
+{% endblock %}

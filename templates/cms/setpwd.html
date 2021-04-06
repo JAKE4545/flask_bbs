@@ -1,0 +1,44 @@
+{% extends 'cms/cms_base.html' %}
+
+{% block title %}
+  <title>修改密码</title>
+{% endblock %}
+
+{% block page_title %}
+  <h1 class="page-header">修改个人密码</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <input type="hidden" name="csrf_token", value="{{ csrf_token() }}">
+    <div class="form-container">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">原密码</div>
+          <input type="password" class="form-control" name="raw_password" placeholder="" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">新密码</div>
+          <input type="password" class="form-control" name="password" placeholder="" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">重复新密码</div>
+          <input type="password" class="form-control" name="repeat" placeholder="" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">确认修改</button>
+      </div>
+      {% if error %}
+        <p style="color: red">{{ error }}</p>
+      {% endif %}
+      {% if message %}
+        <p>{{ message }}</p>
+      {% endif %}
+    </div>
+  </form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'cms/cms_base.html' %}
+
+{% block title %}
+    <title>欢迎刷题</title>
+{% endblock %}
+
+{% block page_title %}
+  <h1 class="page-header">欢迎来到刷题系统</h1>
+{% endblock %}
+
+{% block content %}
+<a href="1">开始刷题</a>
+{% endblock %}
+
+{{ url_for("cms.logout") }}
