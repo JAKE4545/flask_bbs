@@ -6,6 +6,8 @@ This is a forum system developed based on flask. It is derived from a final clas
 ## 快速开始
 ### 克隆到本地
 >$ git clone https://github.com/JAKE4545/flask_bbs.git
+
+在创建好虚拟环境后：
 ### 安装依赖包
 >$ pip install -r requirements.txt
 ### 修改数据库配置
